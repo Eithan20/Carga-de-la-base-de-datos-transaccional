@@ -1,0 +1,21 @@
+# Archivos que genera el programa
+logs/*
+!logs/.gitkeep
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Credenciales y configuración local
+.env
+
+# Archivos del sistema y del editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos comprimidos
+*.zip

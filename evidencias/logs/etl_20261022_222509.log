@@ -1,0 +1,46 @@
+22:25:09 [INFO] Proceso ETL iniciado. Registro en C:\Users\eitha\Downloads\ETL_Opiniones\ETL_Opiniones\logs\etl_20261022_222509.log
+22:25:09 [INFO] Conectando a  / AnalisisOpinionesTransaccional con el driver 'ODBC Driver 17 for SQL Server'
+22:25:09 [INFO] === CAPA 1: extracción de los CSV a staging ===
+22:25:09 [INFO] [Capa 1] Clientes              500 leídos ->  500 en staging, 0 rechazados
+22:25:09 [INFO] [Capa 1] Productos             200 leídos ->  200 en staging, 0 rechazados
+22:25:09 [INFO] [Capa 1] FuenteDatos           100 leídos ->  100 en staging, 0 rechazados
+22:25:10 [INFO] [Capa 1] Encuestas             500 leídos ->  500 en staging, 0 rechazados
+22:25:10 [INFO] [Capa 1] ResenasWeb            200 leídos ->  200 en staging, 0 rechazados
+22:25:10 [INFO] [Capa 1] ComentariosSociales   200 leídos ->  200 en staging, 0 rechazados
+22:25:10 [INFO] === CAPA 2: validación y carga a la base transaccional ===
+22:25:11 [INFO] [Capa 2] Clientes              500 insertados, 0 rechazados
+22:25:11 [INFO] [Capa 2] Productos             200 insertados, 0 rechazados
+22:25:11 [INFO] [Capa 2] FuenteDatos           100 insertados, 0 rechazados
+22:25:11 [INFO] [Capa 2] Encuestas               6 insertados, 494 rechazados
+22:25:11 [INFO] [Capa 2] ResenasWeb            200 insertados, 0 rechazados
+22:25:11 [INFO] [Capa 2] ComentariosSociales   200 insertados, 0 rechazados
+22:25:11 [DEBUG] 
+22:25:11 [DEBUG] ==============================================================================
+22:25:11 [DEBUG] RESUMEN DEL PROCESO ETL
+22:25:11 [DEBUG] ==============================================================================
+22:25:11 [DEBUG] Inicio: 2026-10-22 22:25:09   Fin: 2026-10-22 22:25:11   Duración: 2.5 s
+22:25:11 [DEBUG] 
+22:25:11 [DEBUG] Entidad                Procesados   Staging  Insertados  Rechazados
+22:25:11 [DEBUG] -------------------------------------------------------------------
+22:25:11 [DEBUG] Clientes                      500       500         500           0
+22:25:11 [DEBUG] Productos                     200       200         200           0
+22:25:11 [DEBUG] FuenteDatos                   100       100         100           0
+22:25:11 [DEBUG] Encuestas                     500       500           6         494
+22:25:11 [DEBUG] ResenasWeb                    200       200         200           0
+22:25:11 [DEBUG] ComentariosSociales           200       200         200           0
+22:25:11 [DEBUG] -------------------------------------------------------------------
+22:25:11 [DEBUG] TOTAL                        1700      1700        1206         494
+22:25:11 [DEBUG] 
+22:25:11 [DEBUG] Motivos de rechazo:
+22:25:11 [DEBUG]   [Encuestas] Integridad referencial: el cliente y el producto no existen en los catálogos: 386
+22:25:11 [DEBUG]   [Encuestas] Integridad referencial: el cliente no existe en el catálogo de clientes: 87
+22:25:11 [DEBUG]   [Encuestas] Integridad referencial: el producto no existe en el catálogo de productos: 21
+22:25:11 [DEBUG] 
+22:25:11 [DEBUG] Verificación en la base de datos:
+22:25:11 [DEBUG]   Procesados = insertados + rechazados en todas las entidades: SÍ
+22:25:11 [DEBUG]   Los registros guardados en las 6 tablas coinciden con los insertados: SÍ
+22:25:11 [DEBUG]   Registros huérfanos (integridad referencial): 0 en 9 comprobaciones
+22:25:11 [DEBUG] 
+22:25:11 [DEBUG] RESULTADO: CARGA COMPLETADA CORRECTAMENTE
+22:25:11 [DEBUG] Hay 494 registros rechazados; el detalle está en la tabla stg.RegistrosRechazados.
+22:25:11 [DEBUG] ==============================================================================
